@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding-top: 60px; /* Adjust according to your navbar height */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .btn-submit {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Hospital Management System</a>
+        
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2>Patient Registration Form</h2>
+    <form id="registrationForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" class="form-control" id="dob" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select class="form-control" id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-submit">Submit</button>
+    </form>
+
+    <h2 class="mt-5">Registered Users</h2>
+    <p>Total Registered Users: <span id="userCount">0</span></p>
+    <table id="userTable" class="mt-3">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be filled dynamically -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Function to handle form submission
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        // Get form values
+        let name = document.getElementById('name').value;
+        let dob = document.getElementById('dob').value;
+        let gender = document.getElementById('gender').value;
+        // Create user object
+        let user = {
+            name: name,
+            dob: dob,
+            gender: gender
+        };
+        // Get existing users from local storage
+        let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+        // Add new user to the array
+        registeredUsers.push(user);
+        // Save updated array to local storage
+        localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+        // Update the count on the home page
+        document.getElementById('userCount').innerText = registeredUsers.length;
+        // Populate table with registered users
+        populateTable(registeredUsers);
+    });
+
+    // Function to populate table with registered users
+    function populateTable(registeredUsers) {
+        // Clear existing table rows
+        document.getElementById('userTable').querySelector('tbody').innerHTML = '';
+        // Populate the table with registered users
+        registeredUsers.forEach(function(user) {
+            let row = document.getElementById('userTable').querySelector('tbody').insertRow();
+            let nameCell = row.insertCell(0);
+            let dobCell = row.insertCell(1);
+            let genderCell = row.insertCell(2);
+            nameCell.textContent = user.name;
+            dobCell.textContent = user.dob;
+            genderCell.textContent = user.gender;
+        });
+    }
+
+    // Clear local storage on page refresh
+    window.addEventListener('beforeunload', function() {
+        localStorage.removeItem('registeredUsers');
+    });
+</script>
+
+</body>
+</html>

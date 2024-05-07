@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Page styles */
+        .ui-page {
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+        .ui-header {
+            background-color: #333;
+            color: #fff;
+            text-shadow: none;
+            border: none;
+        }
+
+        ui-footer {
+        background-color: #333;
+        color: #fff;
+        text-shadow: none;
+        border: none;
+        text-align: center;
+        margin-top: auto; /* Push the footer to the bottom */
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        /* Content styles */
+        .ui-content {
+            padding: 15px;
+        }
+
+        /* Card container */
+        .menu-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        /* Card styles */
+        .menu-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .menu-card p {
+            margin-bottom: 0;
+            color: #666;
+        }
+
+        /* About Us and Contact Us styles */
+        .about-contact {
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menu Page -->
+<div data-role="page" id="menu">
+    <div data-role="header">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Menu</h1>
+        <a href="#about" class="scroll-link">About Us</a>
+        <a href="#contact" class="scroll-link">Contact Us</a>
+    </div>
+    <div data-role="content">
+        <div class="menu-cards">
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h2>Menu Item 1</h2>
+                <p>Description of Menu Item 1 goes here...</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h2>Menu Item 2</h2>
+                <p>Description of Menu Item 2 goes here...</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h2>Menu Item 3</h2>
+                <p>Description of Menu Item 3 goes here...</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://via.placeholder.com/300" alt="Food Item">
+                <h2>Menu Item 4</h2>
+                <p>Description of Menu Item 4 goes here...</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- About Us Div -->
+<div id="about" class="about-contact">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec hendrerit mi. Proin feugiat ligula sed nunc placerat, in accumsan neque pharetra.</p>
+</div>
+
+<!-- Contact Us Div -->
+<div id="contact" class="about-contact">
+    <h2>Contact Us</h2>
+    <p>Contact information goes here...</p>
+</div>
+
+<div data-role="footer">
+    <h4 >&copy; 2024 Food App</h4>
+</div>
+
+<script>
+    $(document).on('click', '.scroll-link', function(e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 800);
+    });
+</script>
+
+</body>
+</html>

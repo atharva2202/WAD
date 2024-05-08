@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Ticket Booking</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-5 text-center">Welcome to Movie Ticket Booking</h1>
+      <div id="movies" class="row mt-5 justify-content-center"></div>
+      <div id="movieDetails" class="row mt-5 d-none">
+        <div class="col-md-6 offset-md-3">
+          <img
+            id="moviePoster"
+            class="img-fluid mb-3"
+            src=""
+            alt="Movie Poster"
+          />
+          <h2 id="movieTitle" class="text-center"></h2>
+          <p id="showtimes"></p>
+          <button id="bookTicketBtn" class="btn btn-primary btn-block">
+            Book Ticket
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

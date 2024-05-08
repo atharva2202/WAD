@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Movie 1",
+        "image": "images/movie1.png",
+        "showtimes": ["10:00 AM", "1:00 PM", "4:00 PM"]
+    },
+    {
+        "title": "Movie 2",
+        "image": "images/movie2.png",
+        "showtimes": ["11:00 AM", "2:00 PM", "5:00 PM"]
+    },
+    {
+        "title": "Movie 3",
+        "image": "images/movie3.png",
+        "showtimes": ["12:00 PM", "3:00 PM", "6:00 PM"]
+    }
+]

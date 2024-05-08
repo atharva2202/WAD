@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Services</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Add your custom styles here */
+    body {
+      background-color: #f8f9fa; /* White background */
+      color: #373a3c; /* Dark text color */
+      font-family: Arial, sans-serif;
+    }
+
+    .jumbotron {
+      background-color: #3e9934; /* Green background */
+      color: #fff; /* White text color */
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .jumbotron h1 {
+      font-size: 2rem; /* Reduced header size */
+    }
+
+    .card {
+      margin-bottom: 20px;
+    }
+
+    .card-header {
+      background-color: #3e9934; /* Green background */
+      color: #fff; /* White text color */
+    }
+
+    .btn-offers {
+      background-color: #00ff80; /* Green background */
+      color: #000000; /* White text color */
+      position: absolute;
+      top: 150px; /* Adjusted position */
+      right: 20px; /* Adjusted position */
+    }
+
+    .footer {
+      background-color: #343a40; /* Dark background */
+      color: #fff; /* White text color */
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Image styling */
+    .card-img-top {
+      height: 300px; /* Adjusted height */
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="jumbotron text-center">
+    <div class="container">
+      <h1 class="display-4">Welcome to Solar Energy Services</h1>
+      <p class="lead">Empowering India with clean and renewable solar energy solutions.</p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+    <button class="btn btn-offers btn-lg" onclick="toggleOffers()">View Offers</button>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="solar-panel.jpg" class="card-img-top" alt="Solar Panel Installation">
+          <div class="card-body">
+            <h5 class="card-title">Solar Panel Installation</h5>
+            <p class="card-text">Harness the power of the sun with our professional solar panel installation services.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="solar-battery.jpg" class="card-img-top" alt="Solar Battery Solutions">
+          <div class="card-body">
+            <h5 class="card-title">Solar Battery Solutions</h5>
+            <p class="card-text">Store excess solar energy efficiently with our advanced solar battery solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <img src="solar-maintenance.jpg" class="card-img-top" alt="Solar Panel Maintenance">
+          <div class="card-body">
+            <h5 class="card-title">Solar Panel Maintenance</h5>
+            <p class="card-text">Keep your solar panels operating at peak performance with our comprehensive maintenance services.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <img src="solar-financing.jpg" class="card-img-top" alt="Solar Financing Options">
+          <div class="card-body">
+            <h5 class="card-title">Solar Financing Options</h5>
+            <p class="card-text">Explore flexible financing options to make solar energy more affordable for everyone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Special Offers Section -->
+  <div id="offers" class="container mt-4" style="display: none;">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                <h4 class="mb-0">Special Offers</h4>
+            </div>
+            <div class="card-body">
+                <p>1. Get 10% off on solar panel installation for residential projects.</p>
+                <p>2. Free solar battery upgrade with commercial solar panel installations.</p>
+                <p>3. Refer a friend and receive a cashback of ₹5000 on your next solar maintenance service.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mb-0">© 2024 Solar Energy Services. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (jQuery and Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    function toggleOffers() {
+    var offers = document.getElementById('offers');
+    var cards = document.querySelectorAll('.card');
+    if (offers.style.display === 'none' || window.getComputedStyle(offers).display === 'none') {
+        offers.style.display = 'block';
+        cards.forEach(function(card) {
+            card.style.display = 'none';
+        });
+    } else {
+        offers.style.display = 'none';
+        cards.forEach(function(card) {
+            card.style.display = 'block';
+        });
+    }
+    }
+  </script>
+</body>
+</html>

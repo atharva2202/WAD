@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Car Rentals</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    /* Add your custom styles here */
+    body {
+      background-color: #f8f9fa; /* Light gray background */
+      color: #343a40; /* Dark text color */
+      font-family: Arial, sans-serif;
+    }
+
+    .jumbotron {
+      background-color: #000; /* Black background */
+      color: #fff; /* White text color */
+      padding: 30px 20px; /* Adjusted padding */
+      margin-bottom: 10px;
+    }
+
+    .jumbotron h1 {
+      font-size: 2.5rem; /* Larger font size */
+    }
+
+    .btn-offers {
+      background-color: #28a745; /* Green background */
+      color: #fff; /* White text color */
+      border: none; /* Remove border */
+      padding: 10px 20px; /* Adjusted padding */
+      font-size: 1.2rem; /* Larger font size */
+      border-radius: 5px; /* Rounded corners */
+      cursor: pointer; /* Cursor on hover */
+    }
+
+    .card {
+      border: none; /* Remove card borders */
+      margin-bottom: 20px;
+      background-color: #fff; /* White background */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* Move card up on hover */
+    }
+
+    .card-img-top {
+      height: 200px; /* Adjusted height */
+      object-fit: cover;
+    }
+
+    .card-title {
+      color: #000; /* Black text color */
+    }
+
+    .card-text {
+      color: #555; /* Dark gray text color */
+    }
+
+    .footer {
+      background-color: #343a40; /* Dark background */
+      color: #fff; /* White text color */
+      text-align: center;
+      padding: 5px 0;
+      position: fixed; /* Fixed to bottom */
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="jumbotron text-center">
+    <h1 class="display-4">City Car Rentals</h1>
+    <p class="lead">Explore our wide range of cars and book your ride now!</p>
+    <button class="btn btn-offers" onclick="toggleOffers()">View Offers</button>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+    <!-- Car Rental Section -->
+    <section id="car-rental">
+      <h2 class="text-center mb-4">Cars for Rent</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="swift.jpg" class="card-img-top" alt="Swift">
+            <div class="card-body">
+              <h5 class="card-title">Maruti Swift</h5>
+              <p class="card-text">Rent: ₹2000/day</p> <!-- Rental price in INR -->
+              <p class="card-text">Deposit: ₹5000</p> <!-- Deposit amount in INR -->
+              <p class="card-text">A compact and fuel-efficient car ideal for city travel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="verna.jpg" class="card-img-top" alt="Verna">
+            <div class="card-body">
+              <h5 class="card-title">Hyundai Verna</h5>
+              <p class="card-text">Rent: ₹2500/day</p> <!-- Rental price in INR -->
+              <p class="card-text">Deposit: ₹6000</p> <!-- Deposit amount in INR -->
+              <p class="card-text">A comfortable and spacious car suitable for both short and long trips.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="xuv500.jpg" class="card-img-top" alt="XUV500">
+            <div class="card-body">
+              <h5 class="card-title">Mahindra XUV500</h5>
+              <p class="card-text">Rent: ₹3000/day</p> <!-- Rental price in INR -->
+              <p class="card-text">Deposit: ₹7000</p> <!-- Deposit amount in INR -->
+              <p class="card-text">A versatile and rugged vehicle perfect for family outings and off-road adventures.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offers and Charges Section -->
+    <section id="offers-charges" style="display: none;">
+      <h2 class="text-center mb-4">Special Offers &amp; Charges</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Offer 1: Weekend Special</h5>
+              <p class="card-text">Get 20% off on all bookings made for the upcoming weekend.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Offer 2: Referral Bonus</h5>
+              <p class="card-text">Refer a friend and earn a ₹500 discount on your next booking.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Offer 3: First-time User Discount</h5>
+              <p class="card-text">Get ₹1000 off on your first booking with us.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Offer 4: Long-term Rental</h5>
+              <p class="card-text">Book a car for more than a week and get a 15% discount.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 City Car Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (jQuery and Popper.js) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    function toggleOffers() {
+      var carRentalSection = document.getElementById('car-rental');
+      var offersChargesSection = document.getElementById('offers-charges');
+
+      if (carRentalSection.style.display === 'none' || window.getComputedStyle(carRentalSection).display === 'none') {
+        carRentalSection.style.display = 'block';
+        offersChargesSection.style.display = 'none';
+      } else {
+        carRentalSection.style.display = 'none';
+        offersChargesSection.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
